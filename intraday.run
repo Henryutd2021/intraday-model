@@ -1,0 +1,15 @@
+reset;
+model intraday.mod;
+data intraday_2.dat;
+option solver cplex;
+solve;
+display pechp, pes_ch, pes_dis, se, ths_ch, ths_dis, sth, pimb; 
+display: pechp[1]*cf + pes_ch[1]*co + pes_dis[1]*co + pimb[1]*cp[1]- pmda[1]*cm[1];
+display: pechp[2]*cf + pes_ch[2]*co + pes_dis[2]*co + pimb[2]*cp[2]- pmda[2]*cm[2];
+display: pechp[3]*cf + pes_ch[3]*co + pes_dis[3]*co + pimb[3]*cp[3]- pmda[3]*cm[3];
+display: pechp[4]*cf + pes_ch[4]*co + pes_dis[4]*co + pimb[4]*cp[4]- pmda[4]*cm[4];
+display se[4];
+display sth[4];
+#display _nvars;
+#display _ncons;
+#display _total_solve_time;

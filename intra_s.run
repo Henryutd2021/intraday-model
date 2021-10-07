@@ -1,0 +1,6 @@
+reset;
+model intraday.mod;
+data intra_s3.dat;
+option solver cplex;
+solve;
+display  pechp, pes_ch, pes_dis, se, ths_ch, ths_dis, sth, pimb; 
